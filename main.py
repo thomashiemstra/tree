@@ -26,7 +26,7 @@ green_chars_4 = [font_4.render(char, True, (0, 255, 0)) for char in chars]
 screen = pygame.display.set_mode(RES)
 background = pygame.Surface(RES)
 display_surface = pygame.Surface(RES)
-display_surface.set_alpha(20)
+display_surface.set_alpha(18)
 # pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 
 clock = pygame.time.Clock()
@@ -41,25 +41,25 @@ class Symbol:
 
     def draw(self):
         val = choice(green_chars)
-        self.y = self.y + self.speed if self.y < HEIGHT else -FONT_SIZE * randrange(1, 10)
+        self.y = self.y + self.speed if self.y < HEIGHT else -FONT_SIZE * randrange(1, 2)
         if HEIGHT > self.y > 0 and background.get_at((self.x, self.y)) != (255, 255, 255, 255):
             screen.blit(val, (self.x, self.y))
 
     def draw_2(self):
         val = choice(green_chars_2)
-        self.y = self.y + self.speed if self.y < HEIGHT else -FONT_SIZE * randrange(1, 10)
+        self.y = self.y + self.speed if self.y < HEIGHT else -FONT_SIZE * randrange(1, 2)
         if HEIGHT > self.y > 0 and background.get_at((self.x, self.y)) != (255, 255, 255, 255):
             screen.blit(val, (self.x, self.y))
 
     def draw_3(self):
         val = choice(green_chars_3)
-        self.y = self.y + self.speed if self.y < HEIGHT else -FONT_SIZE * randrange(1, 10)
+        self.y = self.y + self.speed if self.y < HEIGHT else -FONT_SIZE * randrange(1, 2)
         if HEIGHT > self.y > 0 and background.get_at((self.x, self.y)) != (255, 255, 255, 255):
             screen.blit(val, (self.x, self.y))
 
     def draw_4(self):
         val = choice(green_chars_4)
-        self.y = self.y + self.speed if self.y < HEIGHT else -FONT_SIZE * randrange(1, 10)
+        self.y = self.y + self.speed if self.y < HEIGHT else -FONT_SIZE * randrange(1, 2)
         if HEIGHT > self.y > 0 and background.get_at((self.x, self.y)) != (255, 255, 255, 255):
             screen.blit(val, (self.x, self.y))
 
@@ -71,7 +71,7 @@ symbols_4 = [Symbol(x, randrange(-HEIGHT, 0)) for x in range(FONT_SIZE * 3, WIDT
 
 run = True
 
-bg = pygame.image.load("tree.png")
+bg = pygame.image.load("tree2.png")
 bg = pygame.transform.scale(bg, (WIDTH, HEIGHT))
 rect = bg.get_rect()
 x_c, y_c = rect.center
